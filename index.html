@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Planet TailWindCSS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Navbar section -->
+    <nav>
+        <div class="mt-5 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="mx-2 md:mx-4 flex items-center">
+                <img src="Assets/baby-planet logo.png" alt="Baby Planet Logo" class="md:h-13 md:ml-4 h-10 w-30">
+            </div>
+            <!-- search bar -->
+            <div class="hidden md:block md:flex-1 md:mx-4">
+                <div
+                    class="flex border overflow-auto border-[#e8e8e8] rounded-3xl bg-[#fafafa] items-center w-[70%] h-10 md:h-12">
+                    <input class="flex-1 p-2 bg-[#fafafa] mx-2 border-none outline-0 text-sm" type="search"
+                        placeholder="search for products">
+                    <button class="bg-[#a6479c] px-8 py-2  mr-1  rounded-3xl text-white text-sm">search</button>
+                </div>
+            </div>
+            <!-- icons -->
+            <div class="flex items-center space-x-6 p-4 bg-white">
+                <!-- search icon  -->
+                <button class="md:hidden text-gray-500 hover:text-gray-700 transition-colors p-2 mr-1"
+                    aria-label="Open search">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" />
+                    </svg>
+                </button>
+                <button class="text-gray-500 hover:text-gray-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+                </button>
+                <div class="relative cursor-pointer group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-500 group-hover:text-gray-700 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    </svg>
+                    <span
+                        class="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-purple-600 text-[10px] font-normal text-white shadow-sm">
+                        0
+                    </span>
+                </div>
+                <div class="flex items-center space-x-2 cursor-pointer group">
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-5 h-5 text-gray-500 group-hover:text-gray-700 transition-colors" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                        </svg>
+                        <span
+                            class="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-purple-600 text-[10px] font-normal text-white shadow-sm">
+                            0
+                        </span>
+                    </div>
+                    <span class="text-blue-300 text-sm font-medium ml-2">
+                        Rs.0
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- Hamburger button -->
+        <button id="menuToggle" class="md:hidden p-2 mr-4" aria-expanded="false" aria-controls="mainMenu"
+            aria-label="Toggle menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="w-6 h-6 text-white" aria-hidden="true">
+                <path
+                    d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z">
+                </path>
+            </svg>
+        </button>
+        <!-- list Navbar (hidden on small screens, shown on md+) -->
+        <div id="mainMenu" class="mt-4 bg-[#a6479c] p-3 pt-4 md:pt-3 text-white tracking-wide text-sm hidden md:block">
+            <ul class="flex flex-col space-y-2 md:flex-row md:justify-around md:items-center md:space-x-4 md:space-y-0">
+                <li class="text-[15px]">Home</li>
+                <li>FASHION<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>GEAR<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>FEEDING<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>BATH<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>SAFETY<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>TOYS<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>DIAPERING<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>NURSERY<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>MOMS<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>BIRTHDAY<span><i class="fa-solid fa-angle-down text-sm font-normal"></i></span></li>
+                <li>SALE</li>
+                <li>NEW ARIVIALS</li>
+            </ul>
+        </div>
+    </nav>
+    <!------------------------- Carousel section ------------------------>
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <div class="relative h-40 overflow-hidden rounded-base sm:h-56 md:h-80 lg:h-96">
+            <!-- Item 1 (Set as active initially) -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                <img src="Assets/hero-section img-1.webp"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Hero Slide 1">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="Assets/hero-section img-2.png"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Hero Slide 2">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <!-- Note: Replaced space with %20 for web safety -->
+                <img src="Assets/hero%20section%20img-3.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Hero Slide 3">
+            </div>
+        </div>
+        <!-- Slider indicators (Reduced to match the 3 items) -->
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-2 rtl:space-x-reverse">
+            <button type="button" class="w-2 h-2 rounded-full " aria-current="true" aria-label="Slide 1"
+                data-carousel-slide-to="0"></button>
+            <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 2"
+                data-carousel-slide-to="1"></button>
+            <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 3"
+                data-carousel-slide-to="2"></button>
+        </div>
+
+        <!-- Slider controls -->
+        <button type="button"
+            class="hidden md:flex absolute top-0 start-0 z-30 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-base bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m15 19-7-7 7-7" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button"
+            class="hidden md:flex absolute top-0 end-0 z-30 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-base bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m9 5 7 7-7 7" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    <!-- Image cards (1) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3 mb-4 px-4 md:px-0">
+        <img class="w-full h-auto md:w-40 md:h-90" src="Assets/img-1.webp">
+        <img class="w-full h-auto md:w-40 md:h-90" src="Assets/img-2.webp">
+        <img class="w-full h-auto md:w-40 md:h-90" src="Assets/img-3.webp">
+        <img class="w-full h-auto md:w-40 md:h-90" src="Assets/img-4.webp">
+    </div>
+    <!-- Best Seller -->
+    <div class="flex flex-col items-center w-full my-8 ">
+        <div class="flex items-center w-full">
+            <div class="grow h-px bg-gray-300"></div>
+            <h2 class="mx-6 text-4xl font-light text-purple-700">
+                Best Sellers
+            </h2>
+            <div class="grow h-px bg-gray-300"></div>
+        </div>
+        <p class="mt-2 text-gray-500 italic font-light tracking-wide">
+            Enjoy the all best products
+        </p>
+    </div>
+    <!------------------------ Image cards (2) ------------------------->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 px-2 md:px-5 md:mx-10">
+        <!--------------- Card No.1 --------------->
+        <div
+            class="w-full md:max-w-[280px] bg-white border border-gray-200 rounded-xl overflow-hidden shadow-xl font-sans">
+            <div class="relative bg-[#f8f7f3] p-4">
+                <div
+                    class="absolute top-3 left-2 bg-[#c71585] text-white w-10 h-10 md:w-13 md:h-13 rounded-full flex items-center justify-center text-sm font-bold shadow-md">
+                    -20%
+                </div>
+                <img src="Assets/img-5.webp" alt="Kids Sando & Short Set"
+                    class="w-full h-auto object-contain mix-blend-multiply" />
+            </div>
+            <div class="p-4">
+                <h3 class="text-gray-500 text-sm truncate mb-1">
+                    Kids Sando & Short Set Savor ...
+                </h3>
+                <div class="flex items-center space-x-2 mb-6">
+                    <span class="text-gray-400 line-through text-base">Rs.1,195</span>
+                    <span class="text-[#a64d9b] font-bold text-lg">Rs.995</span>
+                </div>
+                <button
+                    class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-2 md:px-4 py-1 md:py-2 hover:bg-gray-50 transition-colors group">
+                    <span class="text-[#a64d9b] font-medium text-xs md:text-sm">Quick Shop</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 text-[#a64d9b]" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!--------------- Card No.2 --------------->
+        <div
+            class="w-full md:max-w-[280px] bg-white border border-gray-200 rounded-xl overflow-hidden shadow-2xl font-sans">
+            <div class="relative bg-[#f8f7f3] p-4">
+                <div
+                    class="absolute top-3 left-2 bg-[#c71585] text-white w-10 h-10 md:w-13 md:h-13 rounded-full flex items-center justify-center text-sm font-bold shadow-md">
+                    -20%
+                </div>
+                <img src="Assets/img-6.webp" alt="Kids Sando & Short Set"
+                    class="w-full h-auto object-contain mix-blend-multiply" />
+            </div>
+            <div class="p-4">
+                <h3 class="text-gray-500 text-sm truncate mb-1">
+                    Kids Sando & Short Set Savor ...
+                </h3>
+                <div class="flex items-center space-x-2 mb-6">
+                    <span class="text-gray-400 line-through text-base">Rs.1,195</span>
+                    <span class="text-[#a64d9b] font-bold text-lg">Rs.995</span>
+                </div>
+                <button
+                    class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-2 md:px-4 py-1 md:py-2 hover:bg-gray-50 transition-colors group">
+                    <span class="text-[#a64d9b] font-medium text-xs md:text-sm">Quick Shop</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 text-[#a64d9b]" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!--------------- Card No.3 --------------->
+        <div
+            class="w-full md:max-w-[280px] bg-white border border-gray-200 rounded-xl overflow-hidden shadow-2xl font-sans">
+            <div class="relative bg-[#f8f7f3] p-4">
+                <div
+                    class="absolute top-3 left-7 bg-[#c71585] text-white w-10 h-10 md:w-13 md:h-13 rounded-full flex items-center justify-center text-sm font-bold shadow-md">
+                    -20%
+                </div>
+                <img class="h-30 w-30 md:mx-7 md:h-60 md:w-47" src="Assets/img-7.jpg" alt="Kids Sando & Short Set" />
+            </div>
+            <div class="p-4">
+                <h3 class="text-gray-500 text-sm truncate mb-1">
+                    Kids Sando & Short Set Savor ...
+                </h3>
+                <div class="flex items-center space-x-2 mb-6">
+                    <span class="text-gray-400 line-through text-base">Rs.995</span>
+                    <span class="text-[#a64d9b] font-bold text-lg">Rs.795</span>
+                </div>
+                <button
+                    class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-2 md:px-4 py-1 md:py-2 hover:bg-gray-50 transition-colors group">
+                    <span class="text-[#a64d9b] font-medium text-xs md:text-sm">Quick Shop</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 text-[#a64d9b]" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!--------------- Card No.4 --------------->
+        <div
+            class="w-full md:max-w-[280px] bg-white border  border-gray-200 rounded-xl overflow-hidden shadow-2xl font-sans">
+            <div class="relative bg-[#f8f7f3] p-4">
+                <div
+                    class="absolute top-3 left-2 bg-[#c71585] text-white w-10 h-10 md:w-13 md:h-13 rounded-full flex items-center justify-center text-sm font-bold shadow-md">
+                    -20%
+                </div>
+                <img src="Assets/img-8.webp" alt="Kids Sando & Short Set"
+                    class="w-full h-auto object-contain mix-blend-multiply" />
+            </div>
+            <div class="p-4">
+                <h3 class="text-gray-500 text-sm truncate mb-1">
+                    Kids Sando & Short Set Savor ...
+                </h3>
+                <div class="flex items-center space-x-2 mb-6">
+                    <span class="text-gray-400 line-through text-base">Rs.995</span>
+                    <span class="text-[#a64d9b] font-bold text-lg">Rs.795</span>
+                </div>
+                <button
+                    class="w-full flex items-center justify-between border border-gray-200 rounded-lg px-2 md:px-4 py-1 md:py-2 hover:bg-gray-50 transition-colors group">
+                    <span class="text-[#a64d9b] font-medium text-xs md:text-sm">Quick Shop</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 text-[#a64d9b]" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!------------------------ kid's section ------------------------>
+    <div class="flex justify-center mt-8 mb-8">
+        <div class="w-[98%] flex items-center justify-center text-2xl font-bold text-center h-13 bg-[#ff9625] text-white rounded-md">Kid'S FashiOn</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Small JS to toggle the mobile menu -->
+    <script>
+        (function () {
+            const btn = document.getElementById('menuToggle');
+            const menu = document.getElementById('mainMenu');
+            if (!btn || !menu) return;
+            btn.addEventListener('click', function () {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                menu.classList.toggle('hidden');
+            });
+        })();
+    </script>
+    <!-- CRITICAL: Include this Script at the bottom of your body tag if you haven't installed Flowbite via NPM -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+
+</html>
